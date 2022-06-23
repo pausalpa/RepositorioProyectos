@@ -8,3 +8,7 @@ A continuación un pequeño índice de lo que se encuentra en cada una de las ca
 ### Microcontroladores
 
 ## Software
+
+### CAD
+#### 1. Tristeza
+Diseño de un llavero del personaje de Intensamente: *Tristeza*, el proyecto incluye las diferentes versiones del llavero y sus archivos para imprimirlo en 3D
