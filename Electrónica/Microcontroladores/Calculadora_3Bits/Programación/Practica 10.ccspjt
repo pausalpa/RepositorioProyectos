@@ -1,0 +1,19 @@
+[PROJECT]
+Target=Practica 10.hex
+Processor_Text=PIC16F886
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Practica 10.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Practica 10.c]
+Type=4
+[mru-list]
+1=Practica 10.c
+[Opened Files]
+1=..\Practica 11\Practuca 11.c
+2=
+[Units]
+Count=1
+1=Practica 10 (main)
