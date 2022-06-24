@@ -1,0 +1,261 @@
+CCS PCM C Compiler, Version 5.015, 5967               17-oct-18 09:27
+
+               Filename:   C:\Users\Paulo\Documents\MEGAsync\Trabajos de la escuela\CETI\7° Semestre\Electrónica Digital IV\Prácticas\Practica 7\Practica 7.lst
+
+               ROM used:   147 words (2%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           8 (2%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   025
+0003:  NOP
+.................... /* Práctica 7: Contador ascendente-descendente (automático) 
+....................    Paulo Salvatore Partida Escamilla   15300210 
+....................    Jose Luis Marín Alarcón             15300157 
+.................... */ 
+.................... #include <16F886.h> 
+.................... //////////// Standard Header file for the PIC16F886 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F886 
+0004:  BCF    0A.0
+0005:  BCF    0A.1
+0006:  BCF    0A.2
+0007:  ADDWF  02,F
+0008:  RETLW  FC
+0009:  RETLW  60
+000A:  RETLW  DA
+000B:  RETLW  F2
+000C:  RETLW  66
+000D:  RETLW  B6
+000E:  RETLW  BE
+000F:  RETLW  E0
+0010:  RETLW  FF
+0011:  RETLW  E6
+0012:  RETLW  EE
+0013:  RETLW  3E
+0014:  RETLW  9C
+0015:  RETLW  7A
+0016:  RETLW  9E
+0017:  RETLW  8E
+....................  
+.................... #list 
+....................  
+.................... #use delay(clock=400000) 
+0018:  MOVLW  23
+0019:  MOVWF  04
+001A:  BCF    03.7
+001B:  MOVF   00,W
+001C:  BTFSC  03.2
+001D:  GOTO   024
+001E:  MOVLW  20
+001F:  MOVWF  77
+0020:  DECFSZ 77,F
+0021:  GOTO   020
+0022:  DECFSZ 00,F
+0023:  GOTO   01E
+0024:  RETURN
+.................... #fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout 
+.................... #fuses noieso,nofcmen,nodebug,nowrt,borv21 
+....................  
+.................... #use fast_io(A) 
+.................... #use fast_io(B) 
+.................... #use fast_io(C) 
+.................... void main() 
+0025:  MOVF   03,W
+0026:  ANDLW  1F
+0027:  MOVWF  03
+0028:  BSF    03.5
+0029:  BSF    03.6
+002A:  MOVF   09,W
+002B:  ANDLW  C0
+002C:  MOVWF  09
+002D:  BCF    03.6
+002E:  BCF    1F.4
+002F:  BCF    1F.5
+0030:  MOVLW  00
+0031:  BSF    03.6
+0032:  MOVWF  08
+0033:  BCF    03.5
+0034:  CLRF   07
+0035:  CLRF   08
+0036:  CLRF   09
+0037:  BCF    03.7
+.................... { 
+....................    set_tris_A(0xFF); 
+0038:  MOVLW  FF
+0039:  BSF    03.5
+003A:  BCF    03.6
+003B:  MOVWF  05
+....................    set_tris_B(0x00); 
+003C:  MOVLW  00
+003D:  MOVWF  06
+....................    set_tris_C(0x00); 
+003E:  MOVWF  07
+....................    signed int  y=0; //Contador 
+....................    const int Hexa[16]= {0xFC,0x60,0xDA,0xF2,0x66,0xB6,0xBE,0xE0,0xFF,0xE6,0xEE,0x3E,0x9C,0x7A,0x9E,0x8E}; 
+003F:  BCF    03.5
+0040:  CLRF   21
+....................    /* 0= a,b,c,d,e,f    1111 1100         0xFC 
+....................       1=b,c             0110 0000         0x60 
+....................       2= a,b,d,e,g=1101 1010=             0xDA 
+....................       3=a,b,c,d,g= 1111 0010=             0xF2 
+....................       4= b,c,f,g=0110 0110                0x66 
+....................       5= a,c,d,f,g= 1011 0110             0xB6 
+....................       6= a,c,d,e,f,g=1011 1110            0xBE 
+....................       7= a,b,c=1110 0000                  0xE0 
+....................       8= a,b,c,d,e,f,g=1111 1111          0xFF 
+....................       9= a,b,c,f,g= 1110 0110             0xE6 
+....................       A=a,b,c,e,f,g =1110 1110            0xEE 
+....................       b=c,d,e,f,g= 0011 1110              0x3E 
+....................       C=a,d,e,f= 1001 1100                0x9C 
+....................       d= b,c,d,e,g= 0111 1010             0x7A 
+....................       E=a,d,e,f,g=1001 1110               0x9E 
+....................       F=a,e,f,g= 1000 1110                0x8E 
+....................    */ 
+....................    while(True) 
+....................    { 
+....................       if (Input(Pin_A0)==1)//Automático 
+0041:  BTFSS  05.0
+0042:  GOTO   069
+....................       { 
+....................          Output_B(Hexa[y]); 
+0043:  MOVF   21,W
+0044:  CALL   004
+0045:  MOVWF  22
+0046:  MOVWF  06
+....................          Output_C(y); 
+0047:  MOVF   21,W
+0048:  MOVWF  07
+....................          if (Input(Pin_A1)==0) //Descender 
+0049:  BTFSC  05.1
+004A:  GOTO   058
+....................             { 
+....................                delay_ms(5000); 
+004B:  MOVLW  14
+004C:  MOVWF  22
+004D:  MOVLW  FA
+004E:  MOVWF  23
+004F:  CALL   018
+0050:  DECFSZ 22,F
+0051:  GOTO   04D
+....................                y= y-1; 
+0052:  MOVLW  01
+0053:  SUBWF  21,F
+....................             if (y<0) 
+0054:  BTFSS  21.7
+0055:  GOTO   058
+....................                {y=15;} 
+0056:  MOVLW  0F
+0057:  MOVWF  21
+....................             } 
+....................          if (Input(Pin_A1)==1) //Ascender 
+0058:  BTFSS  05.1
+0059:  GOTO   069
+....................             { 
+....................                delay_ms(5000); 
+005A:  MOVLW  14
+005B:  MOVWF  22
+005C:  MOVLW  FA
+005D:  MOVWF  23
+005E:  CALL   018
+005F:  DECFSZ 22,F
+0060:  GOTO   05C
+....................                y= y+1; 
+0061:  MOVLW  01
+0062:  ADDWF  21,F
+....................             if (y>15) 
+0063:  BTFSC  21.7
+0064:  GOTO   069
+0065:  MOVF   21,W
+0066:  SUBLW  0F
+0067:  BTFSS  03.0
+....................                {y=0;} 
+0068:  CLRF   21
+....................             } 
+....................       } 
+....................       if (Input(Pin_A0)==0) //Manual 
+0069:  BTFSC  05.0
+006A:  GOTO   091
+....................       { 
+....................          Output_B(Hexa[y]); 
+006B:  MOVF   21,W
+006C:  CALL   004
+006D:  MOVWF  22
+006E:  MOVWF  06
+....................          Output_C(y); 
+006F:  MOVF   21,W
+0070:  MOVWF  07
+....................          if (Input(Pin_A1)==1) //Ascender 
+0071:  BTFSS  05.1
+0072:  GOTO   082
+....................             { 
+....................             if (Input(Pin_A7)==1) 
+0073:  BTFSS  05.7
+0074:  GOTO   07A
+....................                {delay_ms(100); 
+0075:  MOVLW  64
+0076:  MOVWF  23
+0077:  CALL   018
+....................                y= y+1;} 
+0078:  MOVLW  01
+0079:  ADDWF  21,F
+....................             while(Input(Pin_A7)==1) 
+007A:  BTFSC  05.7
+....................                {} 
+007B:  GOTO   07A
+....................             if (y>15) 
+007C:  BTFSC  21.7
+007D:  GOTO   082
+007E:  MOVF   21,W
+007F:  SUBLW  0F
+0080:  BTFSS  03.0
+....................                {y=0;} 
+0081:  CLRF   21
+....................             } 
+....................          if (Input(Pin_A1)==0) //Descender 
+0082:  BTFSC  05.1
+0083:  GOTO   091
+....................             { 
+....................             if (Input(Pin_A7)==1) 
+0084:  BTFSS  05.7
+0085:  GOTO   08B
+....................                {delay_ms(100); 
+0086:  MOVLW  64
+0087:  MOVWF  23
+0088:  CALL   018
+....................                y= y-1;} 
+0089:  MOVLW  01
+008A:  SUBWF  21,F
+....................             while(Input(Pin_A7)==1) 
+008B:  BTFSC  05.7
+....................                {} 
+008C:  GOTO   08B
+....................             if (y<0) 
+008D:  BTFSS  21.7
+008E:  GOTO   091
+....................                {y=15;} 
+008F:  MOVLW  0F
+0090:  MOVWF  21
+....................             }  
+....................      } 
+0091:  GOTO   041
+....................    } 
+.................... } 
+0092:  SLEEP
+
+Configuration Fuses:
+   Word  1: 20D4   INTRC_IO NOWDT NOPUT NOMCLR NOPROTECT NOCPD NOBROWNOUT NOIESO NOFCMEN NOLVP NODEBUG
+   Word  2: 3EFF   BORV21 NOWRT

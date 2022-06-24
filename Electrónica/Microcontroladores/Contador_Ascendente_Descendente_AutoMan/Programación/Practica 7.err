@@ -1,0 +1,14 @@
+*** Error 18 "Practica 7.c" Line 5(10,20): File can not be opened
+    Not in "C:\Program Files\PICC\Devices\16F886.h"
+    Not in "C:\Program Files\PICC\Drivers\16F886.h"
+    Not in local "16F886.h"
+    Not in local "C:\Users\Paulo\Documents\MEGAsync\Trabajos de la escuela\CETI\7° Semestre\Electrónica Digital IV\Prácticas\Practica 7\Programación\16F886.h"
+    Not in last "C:\Program Files (x86)\PICC\Drivers\16F886.h"
+    Not in project "C:\Users\Paulo\Documents\MEGAsync\Trabajos de la escuela\CETI\7° Semestre\Electrónica Digital IV\Prácticas\Practica 7\Programación\16F886.h"
+*** Error 128 "Practica 7.c" Line 7(7,62): A #DEVICE required before this line
+*** Error 128 "Practica 7.c" Line 8(7,43): A #DEVICE required before this line
+*** Error 128 "Practica 7.c" Line 12(5,8): A #DEVICE required before this line
+--- Info 300 "Practica 7.c" Line 13(11,12): More info:   ** I/O error 131
+*** Error 44 "Practica 7.c" Line 13(11,12): Internal Error - Contact CCS
+      5 Errors,  0 Warnings.
+Build Failed.
