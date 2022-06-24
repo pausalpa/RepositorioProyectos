@@ -22,14 +22,6 @@ El microcontrolador recibe 4 señales analógicas en sus puertos ADC y según un
 
 ## Software
 
-### CAD
-
-#### [1. Tristeza](./Software/CAD/Tristeza)
-Diseño de un llavero del personaje de Intensamente: *Tristeza*, el proyecto incluye las diferentes versiones del llavero en SolidWorks y sus archivos para imprimirlo en 3D.
-
-#### [2. Gatito de la suerte](Software/CAD/Gatito_de_la_Suerte)
-Diseño de un llavero de un gatito de la suerte, el proyecto incluye el diseño en SolidWorks.
-
 ### Control de Procesos: Matlab y Simulink
 
 #### [1. Control de Lazo Abierto de un motor con Arduino](./Software/Control_de_procesos/Control_de_Lazo_Abierto_con_Arduino)
@@ -43,3 +35,21 @@ El sistema recibe una señal senoidal y busca establecer el sentido de giro del 
 
 #### [4. Control de posición de un motor con Arduino](./Software/Control_de_procesos/Control_de_Posicion_con_Arduino)
 El potenciometro funciona en el sistema como un medio para establecer un setpoint, al entrar al sistema un control PI busca que la posición angular del motor sea equivalente a la del potenciometro, actuando como un Servomotor.
+
+## Diseño
+
+### SolidWorks
+
+#### [1. Tristeza](./Diseño/SolidWorks/Tristeza)
+Diseño de un llavero del personaje de Intensamente: *Tristeza*, el proyecto incluye las diferentes versiones del llavero en SolidWorks y sus archivos para imprimirlo en 3D.
+
+#### [2. Gatito de la suerte](Diseño/SolidWorks/Gatito_de_la_Suerte)
+Diseño de un llavero de un gatito de la suerte, el proyecto incluye el diseño en SolidWorks.
+
+### AutoCAD
+
+#### [1. Proceso de Flujo](Diseño/AutoCAD/Proceso_de_Flujo)
+Este diseño CAD muestra el diagrama de Instrumentación de la variable de Flujo de un proceso de llenado de un tanque.
+
+#### [2. Proceso de Nivel](Diseño/AutoCAD/Proceso_de_Nivel)
+Este diseño CAD muestra el diagrama de Instrumentación de la variable de Nivel del mismo proceso de llenado del tanque.
