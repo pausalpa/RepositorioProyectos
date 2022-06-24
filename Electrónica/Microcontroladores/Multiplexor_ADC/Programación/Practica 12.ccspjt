@@ -1,0 +1,20 @@
+[PROJECT]
+Target=Practica 12.hex
+Processor_Text=PIC16F886
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Practica 12.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Practica 12.c]
+Type=4
+[mru-list]
+1=Practica 12.c
+[Opened Files]
+1=Practica 12.c
+2=..\..\..\..\8° Semestre\Electrónica Digital V\Practica 1.- Registro de Corrimiento\Programación\Practica 1.- Registro de corrimiento
+3=
+[Units]
+Count=1
+1=Practica 12 (main)
