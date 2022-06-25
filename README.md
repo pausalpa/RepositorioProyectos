@@ -3,23 +3,6 @@ Bienvenido!
 Espero tengas un buen paseo por los principales proyectos multidisciplinarios que he desarrollado a lo largo de los años.
 A continuación un pequeño índice de lo que se encuentra en cada una de las carpetas de éste repositorio:
 
-## Electrónica
-
-### Microcontroladores PIC
-
-<!-- #### 1. Convertidor ascendente y descente hexadecimal](/Electrónica/Microcontroladores/Convertidor_Ascendente_Descendente_Hexadecimal)
-El microcontrolador muestra en un display de 7 segmnentos los valores de 0-F que se incrementan o decrementan (esto definido por un deep switch en el primer puerto) únicamente con cada click realizado a un push button en el último puerto. -->
-
-#### [1. Contador ascendente-descendente automático/manual hexadecimal](/Electrónica/Microcontroladores/Contador_Ascendente_Descendente_AutoMan)
-El microcontrolador itera entre los valores 0-F mostrandolos en un display de 7 segmentos, ya sea en orden ascendente o descendente de un modo automático o manual según las entradas del mismo.
-
-#### [2. Calculadora de 3 bits](/Electrónica/Microcontroladores/Calculadora_3Bits)
-El microcontrolador recibe 2 numeros de 3 bits y realiza las operaciones básicas segun un selector de 2 bits. Estos datos se muestran junto con el resultado en un display LCD.
-
-#### [3. Multiplexor de 4 canales analógicos](/Electrónica/Microcontroladores/Multiplexor_ADC)
-El microcontrolador recibe 4 señales analógicas en sus puertos ADC y según una entrada digital en otro puerto toma ese valor y lo muestra en analógico y digital en un display LCD.
-
-
 ## Software
 
 ### LabVIEW
@@ -28,7 +11,7 @@ El microcontrolador recibe 4 señales analógicas en sus puertos ADC y según un
 Esta sección más que un proyecto o archivo individual, es una serie de programas que representan la intención de programar un elevador de 2 pisos (y una PB) con botones adentro y en cada uno de éstos. Implementando indicadores de la posición del elevador y del status de sus puertas. Sin embargo, tras multiples versiones, el sistema se define como _aún con fallas_ ya que hay escenarios sin respuesta definida. Sin embargo, he aquí mi progreso.
 
 #### [2. Proyectos físicos con tarjetas de adquisición de datos](/Software/LabVIEW/Proyectos_Físicos)
-Esta sección es una serie de proyectos orientados a solucionar problemas que parten de una situación real, en los cuales, se busca interactuar con el ambniente mediante tarjetas de adquisicón de datos que también tienen terminales de salida. Entre las soluciones encontramos: Depósitos de agua interconectados, sistemas de toldo y riego automáticos, entre otros. 
+Esta sección es una serie de proyectos orientados a solucionar problemas que parten de una situación real, en los cuales, se busca interactuar con el ambiente mediante tarjetas de adquisicón de datos que también tienen terminales de salida. Entre las soluciones encontramos: Depósitos de agua interconectados, sistemas de toldo y riego automáticos, entre otros. 
 
 ### Control de Procesos: Matlab y Simulink
 
@@ -43,6 +26,26 @@ El sistema recibe una señal senoidal y busca establecer el sentido de giro del 
 
 #### [4. Control de posición de un motor con Arduino](./Software/Control_de_procesos/Control_de_Posicion_con_Arduino)
 El potenciometro funciona en el sistema como un medio para establecer un setpoint, al entrar al sistema un control PI busca que la posición angular del motor sea equivalente a la del potenciometro, actuando como un Servomotor.
+
+### Neumática: FluidSIM
+
+#### [1. Dispositivo para curvar monturas de gafas](/Software/FluidSIM/Curvador_Montura_Gafas)
+a
+#### []()
+
+
+## Electrónica
+
+### Microcontroladores PIC
+
+#### [1. Contador ascendente-descendente automático/manual hexadecimal](/Electrónica/Microcontroladores/Contador_Ascendente_Descendente_AutoMan)
+El microcontrolador itera entre los valores 0-F mostrandolos en un display de 7 segmentos, ya sea en orden ascendente o descendente de un modo automático o manual según las entradas del mismo.
+
+#### [2. Calculadora de 3 bits](/Electrónica/Microcontroladores/Calculadora_3Bits)
+El microcontrolador recibe 2 numeros de 3 bits y realiza las operaciones básicas segun un selector de 2 bits. Estos datos se muestran junto con el resultado en un display LCD.
+
+#### [3. Multiplexor de 4 canales analógicos](/Electrónica/Microcontroladores/Multiplexor_ADC)
+El microcontrolador recibe 4 señales analógicas en sus puertos ADC y según una entrada digital en otro puerto toma ese valor y lo muestra en analógico y digital en un display LCD.
 
 ## Diseño
 
