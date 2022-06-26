@@ -15,24 +15,28 @@ Esta sección es una serie de proyectos orientados a solucionar problemas que pa
 
 ### Control de Procesos: Matlab y Simulink
 
-#### [1. Control de Lazo Abierto de un motor con Arduino](./Software/Control_de_procesos/Control_de_Lazo_Abierto_con_Arduino)
+#### [1. Control de Lazo Abierto de un motor con Arduino](./Software/Matlab_&_Simulink/Control_de_Lazo_Abierto_con_Arduino)
 El sistema toma una señal analógica del Arduino (proveniente de un potenciometro), la mapea y la manda como PWM al motor.
 
-#### [2. Control de Lazo Cerrado de un motor con Arduino](./Software/Control_de_procesos/Control_de_Lazo_Cerrado_con_Arduino)
+#### [2. Control de Lazo Cerrado de un motor con Arduino](./Software/Matlab_&_Simulink/Control_de_Lazo_Cerrado_con_Arduino)
 El sistema recibe un pulso que se establece como setpoint, éste, mediante un lazo cerrado de control PI, busca establecer la señal del tacogenerador conectado al motor en la misma forma.
 
-#### [3. Control de Lazo Abierto de un motor con Inversión de giro con Arduino](./Software/Control_de_procesos/Control_de_Lazo_Abierto_con_Inversion_de_Giro)
+#### [3. Control de Lazo Abierto de un motor con Inversión de giro con Arduino](./Software/Matlab_&_Simulink/Control_de_Lazo_Abierto_con_Inversion_de_Giro)
 El sistema recibe una señal senoidal y busca establecer el sentido de giro del motor en el inverso de la zona de la señal recibida.
 
-#### [4. Control de posición de un motor con Arduino](./Software/Control_de_procesos/Control_de_Posicion_con_Arduino)
+#### [4. Control de posición de un motor con Arduino](./Software/Matlab_&_Simulink/Control_de_Posicion_con_Arduino)
 El potenciometro funciona en el sistema como un medio para establecer un setpoint, al entrar al sistema un control PI busca que la posición angular del motor sea equivalente a la del potenciometro, actuando como un Servomotor.
 
 ### Neumática: FluidSIM
 
-#### [1. Dispositivo para curvar monturas de gafas](/Software/FluidSIM/Curvador_Montura_Gafas)
-a
-#### []()
+#### [1. Secuencia con Arranque y Paro](/Software/FluidSIM/Secuencia_con_Arranque_&_Paro)
+Circuito neumático que sigue  la secuencia A+, B+, A-, B- y cuenta con botones de arranque y paro para iniciar o detener el funcionamiento.
 
+#### [2. Puente Articulado](/Software/FluidSIM/Puente_Articulado)
+Circuito neumático que da solución a un problema de un puente articulado que requiere el control de un cilindro doble efecto con multiples requerimientos.
+
+#### [3. Dispositivo para curvar monturas de gafas](/Software/FluidSIM/Curvador_Montura_Gafas)
+Circuto neumático que da solución a un proceso de curvatura de monturas de gafas, donde se manipula un cilindro multiposicional que mueve el producto y otros 2 cilindros que son parte del proceso.
 
 ## Electrónica
 
