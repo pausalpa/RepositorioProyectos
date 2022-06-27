@@ -27,6 +27,11 @@ El sistema recibe una señal senoidal y busca establecer el sentido de giro del 
 #### [4. Control de posición de un motor con Arduino](./Software/Matlab_&_Simulink/Control_de_Posicion_con_Arduino)
 El potenciometro funciona en el sistema como un medio para establecer un setpoint, al entrar al sistema un control PI busca que la posición angular del motor sea equivalente a la del potenciometro, actuando como un Servomotor.
 
+### PLC: RSLogix
+
+#### [1. Soluciones de pistones paso a paso](/Software/RSLogix/Pistones_Paso_a_Paso)
+Esta sección engloba una serie de programas que dan solución -mediante la metodología paso a paso- a diferentes secuencias con pistones. Desafortunadamente, no se cuenta con la descripción de las problemáticas originales, por lo que únicamente se anexan las soluciones.
+
 ### Neumática: FluidSIM
 
 #### [1. Secuencia con Arranque y Paro](/Software/FluidSIM/Secuencia_con_Arranque_&_Paro)
