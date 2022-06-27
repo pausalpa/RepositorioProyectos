@@ -1,7 +1,7 @@
 # Repositorio Proyectos Paulo Salvatore
 Bienvenido!
 Espero tengas un buen paseo por los principales proyectos multidisciplinarios que he desarrollado a lo largo de los años.
-A continuación un pequeño índice de lo que se encuentra en cada una de las carpetas de éste repositorio:
+A continuación se mostrará un índice de lo que se encuentra en cada una de las carpetas anexas, la descripción de cada uno de los proyectos se encuentra adentro de su correspondiente carpeta madre, permitiendo así una mejor visualización de todos los contenidos de este repositorio.
 
 ## Software
 
@@ -38,16 +38,13 @@ Aquí se encuentra el archivo de Simulink que alberga un par de modelos de el pr
 #### [1. Soluciones de pistones paso a paso](/Software/RSLogix/Pistones_Paso_a_Paso)
 Esta sección engloba una serie de programas que dan solución -mediante la metodología paso a paso- a diferentes secuencias con pistones. Desafortunadamente, no se cuenta con la descripción de las problemáticas originales, por lo que únicamente se anexan las soluciones.
 
-### Neumática: FluidSIM
+### [Neumática: FluidSIM](/Software/FluidSIM/)
 
-#### [1. Secuencia con Arranque y Paro](/Software/FluidSIM/Secuencia_con_Arranque_&_Paro)
-Circuito neumático que sigue  la secuencia A+, B+, A-, B- y cuenta con botones de arranque y paro para iniciar o detener el funcionamiento.
+#### [➤ Secuencia con Arranque y Paro](/Software/FluidSIM/Secuencia_con_Arranque_&_Paro)
 
-#### [2. Puente Articulado](/Software/FluidSIM/Puente_Articulado)
-Circuito neumático que da solución a un problema de un puente articulado que requiere el control de un cilindro doble efecto con multiples requerimientos.
+#### [➤ Puente Articulado](/Software/FluidSIM/Puente_Articulado)
 
-#### [3. Dispositivo para curvar monturas de gafas](/Software/FluidSIM/Curvador_Montura_Gafas)
-Circuto neumático que da solución a un proceso de curvatura de monturas de gafas, donde se manipula un cilindro multiposicional que mueve el producto y otros 2 cilindros que son parte del proceso.
+#### [➤ Dispositivo para curvar monturas de gafas](/Software/FluidSIM/Curvador_Montura_Gafas)
 
 ## Electrónica
 
