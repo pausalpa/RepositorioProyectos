@@ -1,0 +1,21 @@
+[PROJECT]
+Target=Practica 6 LCD.hex
+Processor_Text=PIC16F886
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Practica 6 LCD.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Practica 6 LCD.c]
+Type=4
+[mru-list]
+1=Practica 6 LCD.c
+[Opened Files]
+1=Practica 6 LCD.c
+2=..\Programación\Practica 6.c
+3=..\..\Practica 7.- Timer 0 como contador de eventos\Programación\Practica 7.c
+4=
+[Units]
+Count=1
+1=Practica 6 LCD (main)

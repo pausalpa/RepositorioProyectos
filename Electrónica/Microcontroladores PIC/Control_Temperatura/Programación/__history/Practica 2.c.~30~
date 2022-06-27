@@ -1,0 +1,62 @@
+/* Práctica 2: Control de temperatura
+   Paulo Salvatore Partida Escamilla   15300210
+   Miriam Cristina Aviña Alatorre      15300829
+   */
+#include <16F886.h>
+#device ADC=10
+#use delay(clock=4000000)
+#include <lcd1.c>
+#fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout
+#fuses noieso,nofcmen,nodebug,nowrt,borv21
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+
+void main()
+{
+   lcd_init();
+   set_tris_A(0xFF);
+   set_tris_C(0xFF);
+   int Enter=0;
+   
+   while (1)
+   {
+   if(Input(Pin_C0)==1)
+     {delay_ms(200);
+      Enter=Enter+1;}
+   while (Input(Pin_C0)==1) {}
+   if (Enter>1) {Enter=0;}
+   Switch (Enter)
+   {
+   case 0:
+      signed int Decenas=0;
+      signed int Unidades=9;
+      if (Input(Pin_C1==1))
+         {
+         Unidades=Unidades-1;
+         if (Unidades<0)
+            {Unidades=9;}
+         }
+      
+      Lcd_gotoxy(1,1);
+      printf (lcd_putc, "\f \n \f");
+      printf (lcd_putc, "\nSetPoint: %u%u",Decenas,Unidades);
+      delay_ms(200);
+      break;
+   case 1:
+      delay_ms(100);
+      lcd_gotoxy(1,1);
+      printf (lcd_putc, "Jose Marin   \nReg: 15300157");
+      delay_ms(200);
+      break;
+   default:
+      lcd_gotoxy(1,1);
+      printf (lcd_putc, "Errooor         \n \f");
+      delay_ms(200);
+      break;
+
+   
+   }
+   
+   }
+}

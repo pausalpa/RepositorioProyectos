@@ -39,11 +39,12 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 ### [Microcontroladores PIC](/Electr%C3%B3nica/Microcontroladores%20PIC/)
 
 #### ⇸ Contador ascendente-descendente automático/manual hexadecimal
-#### ⇸ Calculadora de 3 bits
 #### ⇸ Multiplexor de 4 canales analógicos
+#### ⇸ Control de Temperatura
+#### ⇸ Comunicación Serial entre 2 PIC
+
 
 ## Diseño
-
 
 ### [SolidWorks](/Dise%C3%B1o/SolidWorks/)
 

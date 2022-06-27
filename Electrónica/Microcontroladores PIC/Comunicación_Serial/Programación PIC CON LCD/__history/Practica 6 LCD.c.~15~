@@ -1,0 +1,42 @@
+/* Práctica 6: Comunicación Serial. PIC CON EL LCD
+   Paulo Salvatore Partida Escamilla 15300210
+   Miriam Cristina Aviña Alatorre 15300829
+*/
+#include <16F886.h>
+#use delay(clock=4000000)
+#include <lcd1.c>
+#use RS232(BAUD=9600,XMIT=PIN_C6,RCV=PIN_C7,BITS=8)
+#fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout
+#fuses noieso,nofcmen,nodebug,nowrt,borv21
+#use fast_io(B)
+#use fast_io(C)
+
+char Teclapresionada='9';
+/*#Int_RDA
+void RDA_isr()
+{
+Teclapresionada=getc();
+}*/
+
+void main()
+{
+   //ENABLE_INTERRUPTS(INT_RDA);
+   //ENABLE_INTERRUPTS(GLOBAL);
+   lcd_init();
+   int led;
+   while(1)
+   {
+      lcd_gotoxy(1,1);
+      printf (lcd_putc, "Tecla presionada:\n%c                  ",Teclapresionada);
+      /*If (Tecla=='0')
+      {
+         led=1;
+         putc(led);
+      }
+      else  
+      {led=0;}*/
+      
+   }
+}
+
+

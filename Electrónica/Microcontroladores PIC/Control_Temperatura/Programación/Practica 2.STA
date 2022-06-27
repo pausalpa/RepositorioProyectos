@@ -1,0 +1,73 @@
+
+ROM used:   1744/8192 (21%)
+            1744/8192 (21%) including unused fragments
+
+            1.7 Average locations per line
+            12.7 Average locations per statement
+
+RAM used:   6/368 (2%) at main() level
+            45/368 (12%) worst case
+
+Stack used: 5 worst case (5 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   83    74  54  Practica 2.c
+  751     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F886.h
+  180    63  46  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\lcd1.c
+----- -----
+ 1014   137 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1    1             @delay_ms1
+0      8   0    0             @const620
+ Inline         3   463  4.3  lcd_read_byte
+0     12   1    1   134  2.2  lcd_send_nibble
+0     58   3    3   317  4.3  lcd_send_byte
+0     44   3    2   422  4.7  lcd_init
+0     18   1    4   186  5.5  lcd_gotoxy
+0     36   2    1   272  4.1  lcd_putc
+0    462  26    1  2694  9.6  MAIN
+0     19   1    0             @const657
+0     87   5    5             @PSTRINGCN7_641
+0     21   1    3             @DIV88
+0     53   3    2             @PRINTF_U_641
+0     29   2    2             @ITOF
+0    117   7   13             @MULFF
+0    204  12   14             @DIVFF
+0     39   2    2             @MUL88
+0     63   4   10             @FLT
+0     16   1    0             @const680
+ Inline         5             @FTOSD
+0     79   5   13             @DIV3232
+0    224  13   13             @PRINTF_L32D_641FPFPF
+0     16   1    0             @const689
+0     16   1    0             @const690
+0     10   1    0             @const691
+0     88   5    4             @PSTRINGC7_641
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               7
+    Statements              137
+    Comments                193
+    Volume (V)              6109
+    Difficulty (D)          33.1
+    Effort to implement (E) 202513
+    Time to implement (T)   3 hours, 8 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   23
+    Maintainability (MI)    135
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF  1740  304  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

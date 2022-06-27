@@ -1,0 +1,23 @@
+[PROJECT]
+Target=Practica 6.hex
+Processor_Text=PIC16F886
+CCSVersion=5.015
+Compiler=PCM
+[Target Data]
+FileList=Practica 6.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[Practica 6.c]
+Type=4
+[mru-list]
+1=Practica 6.c
+[Opened Files]
+1=Practica 6.c
+2=..\..\Prueba\Programación\1\Pic 1.c
+3=..\..\Prueba\Programación\2\Pic 2.c
+4=..\Programación PIC CON LCD\Practica 6 LCD.c
+5=
+6=
+[Units]
+Count=1
+1=Practica 6 (main)

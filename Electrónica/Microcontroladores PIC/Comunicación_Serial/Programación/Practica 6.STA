@@ -1,0 +1,51 @@
+
+ROM used:   327/8192 (4%)
+            327/8192 (4%) including unused fragments
+
+            0.4 Average locations per line
+            4.3 Average locations per statement
+
+RAM used:   14/368 (4%) at main() level
+            24/368 (7%) worst case
+
+Stack used: 2 worst case (1 in main + 1 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   98    76 100  Practica 6.c
+  751     0   0  ..\..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16F886.h
+----- -----
+  849    76 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     23   7    1             @delay_ms1
+0      8   2    0    20  1.3  RDA_isr
+0    239  73    1  2090  8.4  MAIN
+0      8   2    0             @goto10637
+ Inline         0   463  4.3  @cinit1
+
+Program metrics:
+    Functions               3
+    Statements              76
+    Comments                143
+    Volume (V)              2919
+    Difficulty (D)          14.5
+    Effort to implement (E) 42215
+    Time to implement (T)   39 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   22
+    Maintainability (MI)    33
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00030    45  0  
+00031-007FF   278  1721  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

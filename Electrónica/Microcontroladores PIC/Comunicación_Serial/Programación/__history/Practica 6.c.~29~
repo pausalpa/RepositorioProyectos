@@ -1,0 +1,98 @@
+/* Práctica 6: Comunicación Serial. PIC CON EL TECLADO
+   Paulo Salvatore Partida Escamilla 15300210
+   Miriam Cristina Aviña Alatorre 15300829
+*/
+#include <16F886.h>
+#use delay(clock=4000000)
+#use RS232(BAUD=9600,XMIT=PIN_C6,RCV=PIN_C7,BITS=8)
+#fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout
+#fuses noieso,nofcmen,nodebug,nowrt,borv21
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+
+int1 led;
+#Int_RDA
+void RDA_isr()
+{
+led=getc();
+}
+
+void main()
+{  
+   ENABLE_INTERRUPTS(INT_RDA);
+   ENABLE_INTERRUPTS(GLOBAL);
+   set_tris_A(0x00);
+   set_tris_B(0x00);
+   set_tris_C(0xFF);
+   int Activacion[4]= {14,13,11,7},y=0;
+   /* 14= 1110
+      13= 1101
+      11= 1011
+      7=  0111*/
+   char Tecla;
+   long int Lectura;
+   
+   while (true)
+   {
+      Output_A(Activacion[y]);
+      y=y+1;
+      if (y>=4)
+         {y=0;}
+      delay_ms(20);
+      Lectura=Input_C();
+      if (led==1)
+      {OUTPUT_HIGH(PIN_B7);}
+      else
+      {OUTPUT_LOW(PIN_B7);}
+      
+      switch (y)
+      {
+         case 0:
+            if (Lectura==7)
+            {Tecla='7';}
+            if (Lectura==11)
+            {Tecla='4';}
+            if (Lectura==13)
+            {Tecla='1';}
+            if (Lectura==14)
+            {Tecla='*';}
+            putc(Tecla);
+         break;
+         case 3:
+            if (Lectura==7)
+            {Tecla='8';}
+            if (Lectura==11)
+            {Tecla='5';}
+            if (Lectura==13)
+            {Tecla='2';}
+            if (Lectura==14)
+            {Tecla='0';}
+            putc(Tecla);
+         break;
+         case 2:
+            if (Lectura==7)
+            {Tecla='9';}
+            if (Lectura==11)
+            {Tecla='6';}
+            if (Lectura==13)
+            {Tecla='3';}
+            if (Lectura==14)
+            {Tecla='#';}
+            putc(Tecla);
+         break;
+         case 1:
+            if (Lectura==7)
+            {Tecla='A';}
+            if (Lectura==11)
+            {Tecla='B';}
+            if (Lectura==13)
+            {Tecla='C';}
+            if (Lectura==14)
+            {Tecla='D';}
+            putc(Tecla);
+         break;
+      }
+   }
+}
+

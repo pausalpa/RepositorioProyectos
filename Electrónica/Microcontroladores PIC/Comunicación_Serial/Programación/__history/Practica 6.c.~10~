@@ -1,0 +1,93 @@
+/* Práctica 6: Comunicación Serial. PIC CON EL TECLADO
+   Paulo Salvatore Partida Escamilla 15300210
+   Miriam Cristina Aviña Alatorre 15300829
+*/
+#include <16F886.h>
+#use delay(clock=4000000)
+#fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout
+#fuses noieso,nofcmen,nodebug,nowrt,borv21
+#use fast_io(A)
+#use fast_io(B)
+#use fast_io(C)
+
+void main()
+   {
+      lcd_init(); //**
+      set_tris_A (0x00);
+      set_Tris_B (0x00);
+      set_tris_C (0xFF);
+      Lcd_gotoxy (1, 1); //**
+      int Activacion[4] = {14, 13, 11, 7};
+      /* 14 = 1110-----A3|A2|A1|A0
+      13 = 1101
+      11 = 1011
+      7 = 0111*/
+      int y = 0;
+      char Tecla; 
+      printf (lcd_putc, "Teclado\nMatricial :D"); //**
+      delay_ms (200); //**
+      while (true)
+      {
+         Output_A (Activacion[y]);
+         y = y + 1;
+         if (y >= 4)
+         {y = 0; }
+         delay_ms (20);
+         Lectura=Input_C ();
+         switch (y)
+         {
+            case 0:
+            if (Lectura == 7)
+            {Tecla = '7'; }
+            if (Lectura == 11)
+            {Tecla = '4'; }
+            if (Lectura == 13)
+            {Tecla = '1'; }
+            if (Lectura == 14)
+            {Tecla = ' * '; }
+            Lcd_gotoxy (1, 1) ;
+            printf (lcd_putc, "Tecla presionada:\n % c ",Tecla);
+            break;
+
+            case 3:
+            if (Lectura == 7)
+            {Tecla = '8'; }
+            if (Lectura == 11)
+            {Tecla = '5'; }
+            if (Lectura == 13)
+            {Tecla = '2'; }
+            if (Lectura == 14)
+            {Tecla = '0'; }
+            Lcd_gotoxy (1, 1) ;
+            printf (lcd_putc, "Tecla presionada:\n % c ",Tecla);
+            break;
+
+            case 2:
+            if (Lectura == 7)
+            {Tecla = '9'; }
+            if (Lectura == 11)
+            {Tecla = '6'; }
+            if (Lectura == 13)
+            {Tecla = '3'; }
+            if (Lectura == 14)
+            {Tecla = '#'; }
+            Lcd_gotoxy (1, 1) ;
+            printf (lcd_putc, "Tecla presionada:\n % c ",Tecla);
+            break;
+
+            case 1:
+            if (Lectura == 7)
+            {Tecla = 'A'; }
+            if (Lectura == 11)
+            {Tecla = 'B'; }
+            if (Lectura == 13)
+            {Tecla = 'C'; }
+            if (Lectura == 14)
+            {Tecla = 'D'; }
+            Lcd_gotoxy (1, 1) ;
+            printf (lcd_putc, "Tecla presionada:\n % c ",Tecla);
+            break;
+         }
+      }
+   }
+

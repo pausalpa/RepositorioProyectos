@@ -1,0 +1,458 @@
+CCS PCM C Compiler, Version 5.015, 5967               02-may.-19 08:55
+
+               Filename:   C:\Users\Paulo\Documents\MEGAsync\Trabajos de la escuela\CETI\8° Semestre\Electrónica Digital V\Practica 6.- Comunicación Serial\Programación\Practica 6.lst
+
+               ROM used:   327 words (4%)
+                           Largest free fragment is 2048
+               RAM used:   14 (4%) at main() level
+                           24 (7%) worst case
+               Stack used: 2 locations (1 in main + 1 for interrupts)
+               Stack size: 8
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   050
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   0A,W
+0009:  MOVWF  20
+000A:  CLRF   0A
+000B:  MOVF   04,W
+000C:  MOVWF  22
+000D:  MOVF   77,W
+000E:  MOVWF  23
+000F:  MOVF   78,W
+0010:  MOVWF  24
+0011:  MOVF   79,W
+0012:  MOVWF  25
+0013:  MOVF   7A,W
+0014:  MOVWF  26
+0015:  BCF    03.7
+0016:  BCF    03.5
+0017:  MOVLW  8C
+0018:  MOVWF  04
+0019:  BTFSS  00.5
+001A:  GOTO   01D
+001B:  BTFSC  0C.5
+001C:  GOTO   02E
+001D:  MOVF   22,W
+001E:  MOVWF  04
+001F:  MOVF   23,W
+0020:  MOVWF  77
+0021:  MOVF   24,W
+0022:  MOVWF  78
+0023:  MOVF   25,W
+0024:  MOVWF  79
+0025:  MOVF   26,W
+0026:  MOVWF  7A
+0027:  MOVF   20,W
+0028:  MOVWF  0A
+0029:  SWAPF  21,W
+002A:  MOVWF  03
+002B:  SWAPF  7F,F
+002C:  SWAPF  7F,W
+002D:  RETFIE
+002E:  BCF    0A.3
+002F:  BCF    0A.4
+0030:  GOTO   031
+.................... /* Práctica 6: Comunicación Serial. PIC CON EL TECLADO 
+....................    Paulo Salvatore Partida Escamilla 15300210 
+....................    Miriam Cristina Aviña Alatorre 15300829 
+.................... */ 
+.................... #include <16F886.h> 
+.................... //////////// Standard Header file for the PIC16F886 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F886 
+*
+013F:  BSF    0A.0
+0140:  BCF    0A.1
+0141:  BCF    0A.2
+0142:  ADDWF  02,F
+0143:  GOTO   0A6
+0144:  GOTO   115
+0145:  GOTO   0F0
+0146:  GOTO   0CB
+....................  
+.................... #list 
+....................  
+.................... #use delay(clock=4000000) 
+*
+0039:  MOVLW  32
+003A:  MOVWF  04
+003B:  BCF    03.7
+003C:  MOVF   00,W
+003D:  BTFSC  03.2
+003E:  GOTO   04D
+003F:  MOVLW  01
+0040:  MOVWF  78
+0041:  CLRF   77
+0042:  DECFSZ 77,F
+0043:  GOTO   042
+0044:  DECFSZ 78,F
+0045:  GOTO   041
+0046:  MOVLW  4A
+0047:  MOVWF  77
+0048:  DECFSZ 77,F
+0049:  GOTO   048
+004A:  GOTO   04B
+004B:  DECFSZ 00,F
+004C:  GOTO   03F
+004D:  BCF    0A.3
+004E:  BCF    0A.4
+004F:  GOTO   094 (RETURN)
+.................... #use RS232(BAUD=9600,XMIT=PIN_C6,RCV=PIN_C7,BITS=8) 
+.................... #fuses intrc_io,nowdt,noput,nomclr,noprotect,nocpd,nobrownout 
+.................... #fuses noieso,nofcmen,nodebug,nowrt,borv21 
+.................... #use fast_io(A) 
+.................... #use fast_io(B) 
+.................... #use fast_io(C) 
+....................  
+.................... int led; 
+.................... #Int_RDA 
+.................... void RDA_isr() 
+.................... { 
+.................... led=getc(); 
+*
+0031:  BTFSS  0C.5
+0032:  GOTO   031
+0033:  MOVF   1A,W
+0034:  MOVWF  27
+0035:  BCF    0C.5
+0036:  BCF    0A.3
+0037:  BCF    0A.4
+0038:  GOTO   01D
+.................... } 
+....................  
+.................... void main() 
+*
+0050:  MOVF   03,W
+0051:  ANDLW  1F
+0052:  MOVWF  03
+0053:  BSF    03.5
+0054:  BSF    03.6
+0055:  BCF    07.3
+0056:  MOVLW  19
+0057:  BCF    03.6
+0058:  MOVWF  19
+0059:  MOVLW  A6
+005A:  MOVWF  18
+005B:  MOVLW  90
+005C:  BCF    03.5
+005D:  MOVWF  18
+005E:  BSF    03.5
+005F:  BSF    03.6
+0060:  MOVF   09,W
+0061:  ANDLW  C0
+0062:  MOVWF  09
+0063:  BCF    03.6
+0064:  BCF    1F.4
+0065:  BCF    1F.5
+0066:  MOVLW  00
+0067:  BSF    03.6
+0068:  MOVWF  08
+0069:  BCF    03.5
+006A:  CLRF   07
+006B:  CLRF   08
+006C:  CLRF   09
+006D:  BCF    03.7
+.................... {   
+....................    ENABLE_INTERRUPTS(INT_RDA); 
+006E:  BSF    03.5
+006F:  BCF    03.6
+0070:  BSF    0C.5
+....................    ENABLE_INTERRUPTS(GLOBAL); 
+0071:  MOVLW  C0
+0072:  BCF    03.5
+0073:  IORWF  0B,F
+....................    set_tris_A(0x00); 
+0074:  MOVLW  00
+0075:  BSF    03.5
+0076:  MOVWF  05
+....................    set_tris_B(0x00); 
+0077:  MOVWF  06
+....................    set_tris_C(0xFF); 
+0078:  MOVLW  FF
+0079:  MOVWF  07
+....................    int Activacion[4]= {14,13,11,7},y=0; 
+007A:  MOVLW  0E
+007B:  BCF    03.5
+007C:  MOVWF  28
+007D:  MOVLW  0D
+007E:  MOVWF  29
+007F:  MOVLW  0B
+0080:  MOVWF  2A
+0081:  MOVLW  07
+0082:  MOVWF  2B
+....................    /* 14= 1110 
+....................       13= 1101 
+....................       11= 1011 
+....................       7=  0111*/ 
+....................    char Tecla; 
+....................    long int LecturaConSerial,Lectura; 
+0083:  CLRF   2C
+....................     
+....................    while (1) 
+....................    { 
+....................       Output_A(Activacion[y]); 
+0084:  MOVLW  28
+0085:  ADDWF  2C,W
+0086:  MOVWF  04
+0087:  BCF    03.7
+0088:  MOVF   00,W
+0089:  MOVWF  32
+008A:  MOVWF  05
+....................       y=y+1; 
+008B:  MOVLW  01
+008C:  ADDWF  2C,F
+....................       if (y>=4) 
+008D:  MOVF   2C,W
+008E:  SUBLW  03
+008F:  BTFSS  03.0
+....................          {y=0;} 
+0090:  CLRF   2C
+....................       delay_ms(20); 
+0091:  MOVLW  14
+0092:  MOVWF  32
+0093:  GOTO   039
+....................       LecturaConSerial=Input_C(); 
+0094:  CLRF   2F
+0095:  MOVF   07,W
+0096:  MOVWF  2E
+....................       Lectura=LecturaConSerial&0x0F; 
+0097:  MOVF   2E,W
+0098:  ANDLW  0F
+0099:  MOVWF  30
+009A:  CLRF   31
+....................       // 0000 1111=0F 
+....................       if (led==1) 
+009B:  DECFSZ 27,W
+009C:  GOTO   09F
+....................       {OUTPUT_HIGH(PIN_B7);} 
+009D:  BSF    06.7
+009E:  GOTO   0A0
+....................       else 
+....................       {OUTPUT_LOW(PIN_B7);} 
+009F:  BCF    06.7
+....................        
+....................       switch (y) 
+00A0:  MOVF   2C,W
+00A1:  ADDLW  FC
+00A2:  BTFSC  03.0
+00A3:  GOTO   139
+00A4:  ADDLW  04
+00A5:  GOTO   13F
+....................       { 
+....................          case 0: 
+....................             if (Lectura==7) 
+00A6:  MOVF   30,W
+00A7:  SUBLW  07
+00A8:  BTFSS  03.2
+00A9:  GOTO   0AF
+00AA:  MOVF   31,F
+00AB:  BTFSS  03.2
+00AC:  GOTO   0AF
+....................             {Tecla='1';} 
+00AD:  MOVLW  31
+00AE:  MOVWF  2D
+....................             if (Lectura==11) 
+00AF:  MOVF   30,W
+00B0:  SUBLW  0B
+00B1:  BTFSS  03.2
+00B2:  GOTO   0B8
+00B3:  MOVF   31,F
+00B4:  BTFSS  03.2
+00B5:  GOTO   0B8
+....................             {Tecla='4';} 
+00B6:  MOVLW  34
+00B7:  MOVWF  2D
+....................             if (Lectura==13) 
+00B8:  MOVF   30,W
+00B9:  SUBLW  0D
+00BA:  BTFSS  03.2
+00BB:  GOTO   0C1
+00BC:  MOVF   31,F
+00BD:  BTFSS  03.2
+00BE:  GOTO   0C1
+....................             {Tecla='7';} 
+00BF:  MOVLW  37
+00C0:  MOVWF  2D
+....................             if (Lectura==14) 
+00C1:  MOVF   30,W
+00C2:  SUBLW  0E
+00C3:  BTFSS  03.2
+00C4:  GOTO   0CA
+00C5:  MOVF   31,F
+00C6:  BTFSS  03.2
+00C7:  GOTO   0CA
+....................             {Tecla='*';} 
+00C8:  MOVLW  2A
+00C9:  MOVWF  2D
+....................          break; 
+00CA:  GOTO   139
+....................          case 3: 
+....................             if (Lectura==7) 
+00CB:  MOVF   30,W
+00CC:  SUBLW  07
+00CD:  BTFSS  03.2
+00CE:  GOTO   0D4
+00CF:  MOVF   31,F
+00D0:  BTFSS  03.2
+00D1:  GOTO   0D4
+....................             {Tecla='2';} 
+00D2:  MOVLW  32
+00D3:  MOVWF  2D
+....................             if (Lectura==11) 
+00D4:  MOVF   30,W
+00D5:  SUBLW  0B
+00D6:  BTFSS  03.2
+00D7:  GOTO   0DD
+00D8:  MOVF   31,F
+00D9:  BTFSS  03.2
+00DA:  GOTO   0DD
+....................             {Tecla='5';} 
+00DB:  MOVLW  35
+00DC:  MOVWF  2D
+....................             if (Lectura==13) 
+00DD:  MOVF   30,W
+00DE:  SUBLW  0D
+00DF:  BTFSS  03.2
+00E0:  GOTO   0E6
+00E1:  MOVF   31,F
+00E2:  BTFSS  03.2
+00E3:  GOTO   0E6
+....................             {Tecla='8';} 
+00E4:  MOVLW  38
+00E5:  MOVWF  2D
+....................             if (Lectura==14) 
+00E6:  MOVF   30,W
+00E7:  SUBLW  0E
+00E8:  BTFSS  03.2
+00E9:  GOTO   0EF
+00EA:  MOVF   31,F
+00EB:  BTFSS  03.2
+00EC:  GOTO   0EF
+....................             {Tecla='0';} 
+00ED:  MOVLW  30
+00EE:  MOVWF  2D
+....................          break; 
+00EF:  GOTO   139
+....................          case 2: 
+....................             if (Lectura==7) 
+00F0:  MOVF   30,W
+00F1:  SUBLW  07
+00F2:  BTFSS  03.2
+00F3:  GOTO   0F9
+00F4:  MOVF   31,F
+00F5:  BTFSS  03.2
+00F6:  GOTO   0F9
+....................             {Tecla='3';} 
+00F7:  MOVLW  33
+00F8:  MOVWF  2D
+....................             if (Lectura==11) 
+00F9:  MOVF   30,W
+00FA:  SUBLW  0B
+00FB:  BTFSS  03.2
+00FC:  GOTO   102
+00FD:  MOVF   31,F
+00FE:  BTFSS  03.2
+00FF:  GOTO   102
+....................             {Tecla='6';} 
+0100:  MOVLW  36
+0101:  MOVWF  2D
+....................             if (Lectura==13) 
+0102:  MOVF   30,W
+0103:  SUBLW  0D
+0104:  BTFSS  03.2
+0105:  GOTO   10B
+0106:  MOVF   31,F
+0107:  BTFSS  03.2
+0108:  GOTO   10B
+....................             {Tecla='9';} 
+0109:  MOVLW  39
+010A:  MOVWF  2D
+....................             if (Lectura==14) 
+010B:  MOVF   30,W
+010C:  SUBLW  0E
+010D:  BTFSS  03.2
+010E:  GOTO   114
+010F:  MOVF   31,F
+0110:  BTFSS  03.2
+0111:  GOTO   114
+....................             {Tecla='#';} 
+0112:  MOVLW  23
+0113:  MOVWF  2D
+....................          break; 
+0114:  GOTO   139
+....................          case 1: 
+....................             if (Lectura==7) 
+0115:  MOVF   30,W
+0116:  SUBLW  07
+0117:  BTFSS  03.2
+0118:  GOTO   11E
+0119:  MOVF   31,F
+011A:  BTFSS  03.2
+011B:  GOTO   11E
+....................             {Tecla='A';} 
+011C:  MOVLW  41
+011D:  MOVWF  2D
+....................             if (Lectura==11) 
+011E:  MOVF   30,W
+011F:  SUBLW  0B
+0120:  BTFSS  03.2
+0121:  GOTO   127
+0122:  MOVF   31,F
+0123:  BTFSS  03.2
+0124:  GOTO   127
+....................             {Tecla='B';} 
+0125:  MOVLW  42
+0126:  MOVWF  2D
+....................             if (Lectura==13) 
+0127:  MOVF   30,W
+0128:  SUBLW  0D
+0129:  BTFSS  03.2
+012A:  GOTO   130
+012B:  MOVF   31,F
+012C:  BTFSS  03.2
+012D:  GOTO   130
+....................             {Tecla='C';} 
+012E:  MOVLW  43
+012F:  MOVWF  2D
+....................             if (Lectura==14) 
+0130:  MOVF   30,W
+0131:  SUBLW  0E
+0132:  BTFSS  03.2
+0133:  GOTO   139
+0134:  MOVF   31,F
+0135:  BTFSS  03.2
+0136:  GOTO   139
+....................             {Tecla='D';} 
+0137:  MOVLW  44
+0138:  MOVWF  2D
+....................          break; 
+....................       } 
+....................       putchar(Tecla); 
+0139:  MOVF   2D,W
+013A:  BTFSS  0C.4
+013B:  GOTO   13A
+013C:  MOVWF  19
+013D:  GOTO   084
+....................    } 
+.................... } 
+....................  
+013E:  SLEEP
+
+Configuration Fuses:
+   Word  1: 20D4   INTRC_IO NOWDT NOPUT NOMCLR NOPROTECT NOCPD NOBROWNOUT NOIESO NOFCMEN NOLVP NODEBUG
+   Word  2: 3EFF   BORV21 NOWRT
