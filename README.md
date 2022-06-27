@@ -40,12 +40,12 @@ Esta sección engloba una serie de programas que dan solución -mediante la meto
 
 ### [Neumática: FluidSIM](/Software/FluidSIM/)
 
-#### [➤ Secuencia con Arranque y Paro](/Software/FluidSIM#1-secuencia-con-arranque-y-paro)
+#### [➤ Secuencia con Arranque y Paro](/Software/FluidSIM#-secuencia-con-arranque-y-paro)
 
 
-#### [➤ Puente Articulado](/Software/FluidSIM#2-puente-articulado)
+#### [➤ Puente Articulado](/Software/FluidSIM#-puente-articulado)
 
-#### [➤ Dispositivo para curvar monturas de gafas](/Software/FluidSIM#3-dispositivo-para-curvar-monturas-de-gafas)
+#### [➤ Dispositivo para curvar monturas de gafas](/Software/FluidSIM#-dispositivo-para-curvar-monturas-de-gafas)
 
 ## Electrónica
 
