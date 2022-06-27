@@ -7,6 +7,7 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 
 ### [LabVIEW](/Software/LabVIEW/)
 
+#### ✦ Control de cascada
 #### ✦ Elevadores
 #### ✦ Proyectos físicos con tarjetas de adquisición de datos
 
