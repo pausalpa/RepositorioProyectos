@@ -4,62 +4,53 @@ Espero tengas un buen paseo por los principales proyectos multidisciplinarios qu
 A continuación se mostrará un índice de lo que se encuentra en cada una de las carpetas anexas, la descripción de cada uno de los proyectos se encuentra adentro de su correspondiente carpeta madre, permitiendo así una mejor visualización de todos los contenidos de este repositorio.
 
 ## Software
-<br>
 
 ### [LabVIEW](/Software/LabVIEW/)
 
 #### ✦ Elevadores
-
 #### ✦ Proyectos físicos con tarjetas de adquisición de datos
-<br>
+
 
 ### [Control de Procesos: Matlab y Simulink](/Software/Matlab_%26_Simulink/)
 
 #### » Control de Lazo Abierto de un motor con Arduino
-
 #### » Control de Lazo Cerrado de un motor con Arduino
-
 #### » Control de Lazo Abierto de un motor con Inversión de giro con Arduino
 #### » Control de posición de un motor con Arduino
 #### » Diagrama de bloques de procesos de transmisión de calor
 #### » Diagrama de bloques de un proceso de reactor químico
-<br>
+
 
 ### [PLC: RSLogix](/Software/RSLogix/)
 
 #### ⥽ Soluciones de pistones paso a paso
-<br>
+
 
 ### [Neumática: FluidSIM](/Software/FluidSIM/)
 
 #### ➤ Secuencia con Arranque y Paro
 #### ➤ Puente Articulado
 #### ➤ Dispositivo para curvar monturas de gafas
-<br>
+
 
 ## Electrónica
-<br>
+
 
 ### [Microcontroladores PIC](/Electr%C3%B3nica/Microcontroladores%20PIC/)
 
 #### ⇸ Contador ascendente-descendente automático/manual hexadecimal
-
 #### ⇸ Calculadora de 3 bits
-
 #### ⇸ Multiplexor de 4 canales analógicos
-<br>
 
 ## Diseño
-<br>
+
 
 ### [SolidWorks](/Dise%C3%B1o/SolidWorks/)
 
 #### ⥬ Tristeza
-
 #### ⥬ Gatito de la suerte
-<br>
+
 
 ### [AutoCAD](/Dise%C3%B1o/AutoCAD/)
 #### ⥊ Proceso de Flujo
-
 #### ⥊ Proceso de Nivel
