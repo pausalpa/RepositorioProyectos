@@ -21,6 +21,13 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 #### » Diagrama de bloques de procesos de transmisión de calor
 #### » Diagrama de bloques de un proceso de reactor químico
 
+### [PLC Siemens: LOGO](/Software/Siemens_LOGO/)
+
+#### ⤳ Comparación sensores temperatura
+#### ⤳ Convertidor binario a decimal 4 bits
+#### ⤳ Contador activaciones sensor toggle
+#### ⤳ Sistema Arranque y Paro de ciclo único/variable
+
 
 ### [PLC: RSLogix](/Software/RSLogix/)
 
