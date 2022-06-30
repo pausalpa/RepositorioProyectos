@@ -1,0 +1,33 @@
+<!-- AWP_In_Variable Name = '"Motor"' -->
+<!-- AWP_In_Variable Name = '"ValorEscalado"' -->
+<!-- AWP_In_Variable Name = '"Act_EnergyMeter"' -->
+
+<p>
+<html lang="esp">
+<head>
+<meta charset="utf-8">
+<p>
+<title>Web server S7-1200</title>
+<p>
+</head>
+<body>
+Arranque de un Motor
+<form>
+<p>
+<input type="submit" value="Start">
+<input type="hidden" name='"Motor"' value="1">
+</p>
+</form>
+ <form>
+<p>
+<input type="submit" value="Stop">
+<input type="hidden" name='"Motor"' value="0">
+</p>
+</form> Motor::="Motor":
+</p>
+</form> Valvula::="ValorEscalado":
+</p>
+</form> Energy Meter Activado::="Act_EnergyMeter":
+</body>
+</html>
+<script>setTimeout('document.location.reload()',3000); </script>
