@@ -28,6 +28,9 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 #### ⤳ Contador activaciones sensor toggle
 #### ⤳ Sistema Arranque y Paro de ciclo único/variable
 
+### [PLC Siemenes: TIA Portal 15.1](/Software/Siemens_TIAPortal/)
+
+#### ⟿ Control de un PLC mediante HMI
 
 ### [PLC: RSLogix](/Software/RSLogix/)
 
