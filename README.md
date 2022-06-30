@@ -28,7 +28,7 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 #### ⤳ Contador activaciones sensor toggle
 #### ⤳ Sistema Arranque y Paro de ciclo único/variable
 
-### [PLC Siemenes: TIA Portal 15.1](/Software/Siemens_TIAPortal/)
+### [PLC Siemens: TIA Portal 15.1](/Software/Siemens_TIAPortal/)
 
 #### ⟿ Comunicación entre un PLC y un archivo HTML
 #### ⟿ Control de subida y bajada de una cortina con HMI
