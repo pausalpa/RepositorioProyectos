@@ -30,6 +30,8 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 
 ### [PLC Siemenes: TIA Portal 15.1](/Software/Siemens_TIAPortal/)
 
+#### ⟿ Comunicación entre un PLC y un archivo HTML
+#### ⟿ Control de subida y bajada de una cortina con HMI
 #### ⟿ Control de un PLC mediante HMI
 
 ### [PLC: RSLogix](/Software/RSLogix/)
