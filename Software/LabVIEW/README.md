@@ -1,5 +1,8 @@
 # LabVIEW
 
+## [✦ Interfaz de una máquina de elaboración de Chaskas: Comunicación con Arduino](/Software/LabVIEW/Interfaz_Maquina_Chaskas/)
+Esta sección del proyecto está ligada a la [parte física en Arduino](/Electr%C3%B3nica/Arduino/Maquina_Chaskas_Comunicaci%C3%B3n_LabVIEW/) con quien se comparte información e indicaciones por comunicación serial. Aquí se muestra la interfaz humano-máquina del proceso de selección de la nieve, en donde se pueden seleccionar tamaños, sabores y añadidos, además de tener un sistema  de usuarios en donde solo el administrador pueder acceder a la sescción  de evaluación de los sensores.
+
 ## [✦ Control de cascada](/Software/LabVIEW/Control_Cascada)
 Este proyecto se define como la simulación de un proceso de llenado de tanque, regulado mediante la implementación de un control cascada en PID. El sistema incluye una configuración de usuarios para limitar lo que el operador puede hacer ("admin" para el perfil de administrador) y la posibilidad de manejar a los controladores maestro y esclavo como manual o automatico. Mostrando el comportamiento del sistema en una gráfica.
 

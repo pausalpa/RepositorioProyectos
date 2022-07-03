@@ -7,6 +7,7 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 
 ### [LabVIEW](/Software/LabVIEW/)
 
+#### ✦ Interfaz de una máquina de elaboración de Chaskas: Comunicación con Arduino
 #### ✦ Control de cascada
 #### ✦ Elevadores
 #### ✦ Proyectos físicos con tarjetas de adquisición de datos
@@ -55,6 +56,11 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 #### ⇸ Multiplexor de 4 canales analógicos
 #### ⇸ Control de Temperatura
 #### ⇸ Comunicación Serial entre 2 PIC
+
+### [Arduino](/Electr%C3%B3nica/Arduino/)
+
+#### ⮩ Máquina de elaboración de chaskas: Comunicación con LabVIEW
+
 
 
 ## Diseño
