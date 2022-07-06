@@ -68,8 +68,8 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 ### [SolidWorks](/Dise%C3%B1o/SolidWorks/)
 
 #### ⥬ Tristeza
-#### ⥬ Gatito de la suerte
-
+#### ⥬ Ensamble de un Lavabo
+#### ⥬ Parada de camión
 
 ### [AutoCAD](/Dise%C3%B1o/AutoCAD/)
 #### ⥊ Proceso de Flujo
