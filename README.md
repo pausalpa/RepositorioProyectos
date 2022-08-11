@@ -14,11 +14,11 @@ A continuación se mostrará un índice de lo que se encuentra en cada una de la
 
 ### [C++](/Software/C%2B%2B/)
 
-#### ❱ placeholder
+#### ❱ In progress of adding.
 
 ### [Java](/Software/Java/)
 
-#### ➽ placeholder
+#### ➽ In progress of adding.
 
 ### [Control de Procesos: Matlab y Simulink](/Software/Matlab_%26_Simulink/)
 
